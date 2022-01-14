@@ -1,0 +1,16 @@
+
+server:
+  port: 8761
+
+
+# 마이크로 서비스에는 각 서비스에 고유한 id를 부여해야함 => 그게 discoveryservice
+spring:
+  application:
+    name: discoveryservice
+
+
+# eureka 라이브러리를 포함하면 디폴트로 client를 실행하려고함 => 우리는 server를 구현하기에 기능들을 false해줌, 자기자신을 등록하지 않음
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
