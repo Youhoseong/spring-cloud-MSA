@@ -1,18 +1,29 @@
 
 server:
-  port: 0
+  port: 6846
 
 
 spring:
   application:
     name: user-service
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /h2-console
 
 
 eureka:
   instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+    # 랜덤포트 사용 시 인스턴스가 여러개가 됐을 때 확인이 어려움 => 따라서 instance id 설정하기
+  #  instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
+
+
+greeting:
+  message: Welcome to the Simple E-commerce.
