@@ -18,7 +18,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/")
+@RequestMapping("/user-service")
 public class UserController {
     private final Environment env;
     private final Greeting greeting;
@@ -26,7 +26,8 @@ public class UserController {
 
     @GetMapping("/health-check")
     public String status() {
-        return "It's Working in User Service";
+        return String.format("It's Working in User Service on PORT %s",
+                env.getProperty("local.server.port"));
     }
 
     @GetMapping("/welcome")

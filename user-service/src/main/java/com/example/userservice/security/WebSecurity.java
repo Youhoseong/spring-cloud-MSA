@@ -13,12 +13,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // configure은 인증과 권한에 대한 것이 있다. => 이것은 인증은 됐다고 가정하고 권한에 대한 정의임.
-
         http.csrf().disable();
-        http.authorizeHttpRequests().antMatchers("/user/**").permitAll();
-
-
+        http.authorizeHttpRequests().antMatchers("/users/**").permitAll();
         http.headers().frameOptions().disable();
-
     }
 }
