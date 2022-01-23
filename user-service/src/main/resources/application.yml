@@ -1,6 +1,6 @@
 
 server:
-  port: 6846
+  port: 8080
 
 
 spring:
