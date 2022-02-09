@@ -1,12 +1,12 @@
 
 
 server:
-  port: 8081
+  port: 8082
 
 
 spring:
   application:
-    name: catalog-service
+    name: order-service
   h2:
     console:
       enabled: true
@@ -26,7 +26,7 @@ spring:
     password:
   sql:
     init:
-      mode: never
+      mode: always
 
 
 eureka:
